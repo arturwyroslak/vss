@@ -6,14 +6,14 @@ _cursor()
 	_expand || return
 
 	case $prev in
-		-d|--diff)
-			_filedir
-			return
-			;;
-		-a|--add|--user-data-dir|--extensions-dir)
-			_filedir -d
-			return
-			;;
+		# -d|--diff)
+			# _filedir
+			# return
+			# ;;
+		# -a|--add|--user-data-dir|--extensions-dir)
+			# _filedir -d
+			# return
+			# ;;
 		-g|--goto)
 			compopt -o nospace
 			_filedir
@@ -50,7 +50,7 @@ _cursor()
 			--uninstall-extension --enable-proposed-api --verbose --log -s
 			--status -p --performance --prof-startup --disable-extensions
 			--disable-extension --inspect-extensions --update-extensions
-			--inspect-brk-extensions --disable-gpu' -- "$cur") )
+			--inspect-brk-extensions --disable-gpu --set-openai-key' -- "$cur") )
 		[[ $COMPREPLY == *= ]] && compopt -o nospace
 		return
 	fi
