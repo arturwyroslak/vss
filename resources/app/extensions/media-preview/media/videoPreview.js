@@ -4,22 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 // @ts-check
 "use strict";
+import { getSettings } from './utilities.js';
 
 (function () {
 	// @ts-ignore
 	const vscode = acquireVsCodeApi();
-
-	function getSettings() {
-		const element = document.getElementById('settings');
-		if (element) {
-			const data = element.getAttribute('data-settings');
-			if (data) {
-				return JSON.parse(data);
-			}
-		}
-
-		throw new Error(`Could not load settings`);
-	}
 
 	const settings = getSettings();
 
