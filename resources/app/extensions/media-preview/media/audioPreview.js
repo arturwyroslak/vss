@@ -5,10 +5,18 @@
 // @ts-check
 "use strict";
 
+// This script provides the functionality for previewing audio files within the Visual Studio Code editor.
+// It handles the loading and control of audio media, allowing users to play, pause, and seek audio files.
+
 (function () {
 	// @ts-ignore
 	const vscode = acquireVsCodeApi();
 
+	/**
+	 * Retrieves the settings for the audio preview from the DOM.
+	 * @return {Object} The parsed settings object.
+	 * @throws Will throw an error if the settings cannot be loaded.
+	 */
 	function getSettings() {
 		const element = document.getElementById('settings');
 		if (element) {
@@ -31,9 +39,15 @@
 	container.className = 'audio-container';
 	document.body.appendChild(container);
 
+	// Create an audio element and set its source based on the settings.
 	const audio = new Audio(settings.src === null ? undefined : settings.src);
+	// Enable the default audio controls.
 	audio.controls = true;
 
+	/**
+	 * Handles the event when the audio is ready to be played.
+	 * It updates the UI to reflect that the audio is ready and appends the audio element to the container.
+	 */
 	function onLoaded() {
 		if (hasLoadedMedia) {
 			return;
