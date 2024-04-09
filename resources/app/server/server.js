@@ -3,15 +3,21 @@ const path = require('path');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const http = require('http');
 const socketIo = require('socket.io');
+const cors = require('cors'); // Importing cors for CORS configuration
+
+// Enable CORS for all routes
+app.use(cors());
 
 const app = express();
 const server = http.createServer(app);
+// Initialize socket.io for real-time communication
 const io = socketIo(server);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'out', 'vs', 'code', 'electron-sandbox', 'workbench', 'workbench.html'));
 });
 
+// Serve static files from the 'out' directory
 app.use(express.static(path.join(__dirname, '..', 'out')));
 
 app.use('/api', createProxyMiddleware({

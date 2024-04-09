@@ -1460,6 +1460,19 @@
   "keymapExtensionTips": ["vscodevim.vim", "ms-vscode.sublime-keybindings", "ms-vscode.atom-keybindings", "ms-vscode.brackets-keybindings", "ms-vscode.vs-keybindings", "ms-vscode.notepadplusplus-keybindings", "k--kato.intellij-idea-keybindings", "lfs.vscode-emacs-friendly", "alphabotsec.vscode-eclipse-keybindings", "alefragnani.delphi-keybindings"],
   "languageExtensionTips": ["ms-python.python", "ms-vscode.cpptools-extension-pack", "ms-dotnettools.csdevkit", "ms-toolsai.jupyter", "vscjava.vscode-java-pack", "ecmel.vscode-html-css", "vue.volar", "bmewburn.vscode-intelephense-client", "dsznajder.es7-react-js-snippets", "golang.go", "ms-vscode.powershell", "dart-code.dart-code", "rust-lang.rust-analyzer", "Shopify.ruby-lsp", "GitHub.copilot"],
   "version": "0.31.3",
+  "webDeployment": {
+    "baseUrls": {
+      "development": "http://localhost:3000",
+      "staging": "https://staging.example.com",
+      "production": "https://example.com"
+    },
+    "apiKeys": {
+      "mapService": "YOUR_MAP_SERVICE_API_KEY_HERE",
+      "analyticsService": "YOUR_ANALYTICS_SERVICE_API_KEY_HERE"
+    }
+  },
+  // Added base URLs for deployment environments and API keys for services used by the application.
+  // These are essential for the application's web deployment and operation.
   "removeTelemetryMachineId": true,
   "enabledTelemetryLevels": {
     "error": true,
