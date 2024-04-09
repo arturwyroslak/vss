@@ -37,17 +37,23 @@
 	video.muted = settings.autoplay;
 	video.loop = settings.loop;
 
-	function onLoaded() {
-		if (hasLoadedMedia) {
-			return;
-		}
+	// Marks the video as loaded and updates the UI accordingly.
+	function markVideoAsLoaded() {
 		hasLoadedMedia = true;
-
 		document.body.classList.remove('loading');
 		document.body.classList.add('ready');
 		document.body.append(video);
 	}
 
+	// Wrapper function to check if the media has already been loaded.
+	function onLoaded() {
+		if (hasLoadedMedia) {
+			return;
+		}
+		markVideoAsLoaded();
+	}
+
+	// Event listener for handling video loading errors.
 	video.addEventListener('error', e => {
 		if (hasLoadedMedia) {
 			return;
@@ -61,7 +67,8 @@
 	if (settings.src === null) {
 		onLoaded();
 	} else {
-		video.addEventListener('canplaythrough', () => {
+		// Event listener to ensure the video is ready for playback.
+	video.addEventListener('canplaythrough', () => {
 			onLoaded();
 		});
 	}
