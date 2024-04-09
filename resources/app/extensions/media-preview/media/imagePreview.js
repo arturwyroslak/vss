@@ -5,6 +5,9 @@
 // @ts-check
 "use strict";
 
+// This script provides the functionality for previewing images within the Visual Studio Code editor.
+// It includes features such as zooming in/out, fitting the image to the screen, and adjusting the scale dynamically.
+
 (function () {
 	/**
 	 * @param {number} value
@@ -12,10 +15,22 @@
 	 * @param {number} max
 	 * @return {number}
 	 */
+	/**
+	 * Clamps a value between a minimum and maximum value.
+	 * @param {number} value - The value to clamp.
+	 * @param {number} min - The minimum allowed value.
+	 * @param {number} max - The maximum allowed value.
+	 * @return {number} The clamped value.
+	 */
 	function clamp(value, min, max) {
 		return Math.min(Math.max(value, min), max);
 	}
 
+	/**
+	 * Retrieves the settings for the image preview from the DOM.
+	 * @return {Object} The parsed settings object.
+	 * @throws Will throw an error if the settings cannot be loaded.
+	 */
 	function getSettings() {
 		const element = document.getElementById('image-preview-settings');
 		if (element) {
@@ -78,6 +93,10 @@
 	const container = document.body;
 	const image = document.createElement('img');
 
+	/**
+	 * Updates the scale of the image preview based on the provided scale value.
+	 * @param {number|string} newScale - The new scale value or 'fit' to fit the image to the container.
+	 */
 	function updateScale(newScale) {
 		if (!image || !hasLoadedImage || !image.parentElement) {
 			return;
@@ -119,6 +138,10 @@
 		});
 	}
 
+	/**
+	 * Sets the active state of the image preview, adjusting UI elements accordingly.
+	 * @param {boolean} value - The active state to set.
+	 */
 	function setActive(value) {
 		isActive = value;
 		if (value) {
@@ -146,6 +169,9 @@
 		updateScale(scale);
 	}
 
+	/**
+	 * Zooms into the image by increasing the scale to the next predefined level.
+	 */
 	function zoomIn() {
 		if (scale === 'fit') {
 			firstZoom();
@@ -160,6 +186,9 @@
 		updateScale(zoomLevels[i] || MAX_SCALE);
 	}
 
+	/**
+	 * Zooms out of the image by decreasing the scale to the previous predefined level.
+	 */
 	function zoomOut() {
 		if (scale === 'fit') {
 			firstZoom();
