@@ -1,7 +1,7 @@
 {
   "quality": "stable",
-  "licenseName": "MIT",
-  "licenseUrl": "https://cursor.sh/license.txt",
+  // "licenseName": "MIT",
+  // "licenseUrl": "https://cursor.sh/license.txt",
   "serverGreeting": [],
   "serverLicense": [],
   "vscodeVersion": "1.86.2",
@@ -17,7 +17,10 @@
   "reportIssueUrl": "https://github.com/getcursor/cursor/issues/new",
   "webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
   "aiConfig": {
-    "ariaKey": "control-key"
+    "openAIKey": "YOUR_OPENAI_API_KEY_HERE",
+    // The 'model' property allows specifying the OpenAI model to be used.
+    // Users can modify this to any model they wish, such as 'text-davinci-003', 'text-curie-001', etc.
+    "model": "text-davinci-003"
   },
   "nodejsRepository": "https://nodejs.org",
   "extensionMaxVersions": {
