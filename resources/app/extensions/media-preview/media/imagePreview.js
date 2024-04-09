@@ -12,10 +12,22 @@
 	 * @param {number} max
 	 * @return {number}
 	 */
+	/**
+	 * Clamps a value between a minimum and a maximum value.
+	 * @param {number} value - The value to clamp.
+	 * @param {number} min - The minimum value.
+	 * @param {number} max - The maximum value.
+	 * @return {number} - The clamped value.
+	 */
 	function clamp(value, min, max) {
 		return Math.min(Math.max(value, min), max);
 	}
 
+	/**
+	 * Fetches the settings from a DOM element's data attribute.
+	 * @return {object} The parsed settings object.
+	 * @throws Will throw an error if the settings cannot be loaded.
+	 */
 	function getSettings() {
 		const element = document.getElementById('image-preview-settings');
 		if (element) {
@@ -79,6 +91,10 @@
 	const image = document.createElement('img');
 
 	function updateScale(newScale) {
+		if (typeof newScale !== 'number' || isNaN(newScale)) {
+			console.error('Invalid scale value:', newScale);
+			return;
+		}
 		if (!image || !hasLoadedImage || !image.parentElement) {
 			return;
 		}
@@ -147,9 +163,7 @@
 	}
 
 	function zoomIn() {
-		if (scale === 'fit') {
-			firstZoom();
-		}
+
 
 		let i = 0;
 		for (; i < zoomLevels.length; ++i) {
