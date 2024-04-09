@@ -13,10 +13,10 @@ function initializeOpenAI() {
     return openai;
 }
 
-async function generateText(prompt, options = {}) {
+async function generateText(model, prompt, options = {}) {
     const openai = initializeOpenAI();
     const response = await openai.createCompletion({
-        model: "text-davinci-003",
+        model: model,
         prompt: prompt,
         temperature: options.temperature || 0.7,
         max_tokens: options.max_tokens || 150,
