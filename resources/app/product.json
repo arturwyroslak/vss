@@ -846,6 +846,15 @@
     }
   },
   "webExtensionTips": ["tyriar.luna-paint", "codespaces-contrib.codeswing", "ms-vscode.vscode-github-issue-notebooks", "esbenp.prettier-vscode", "hediet.vscode-drawio"],
+  "renderComDeployment": {
+    "environmentVariables": {
+      "NODE_ENV": "production",
+      "DATABASE_URL": "${DATABASE_URL}"
+    },
+    "buildCommand": "npm run build",
+    "startCommand": "npm start",
+    "publicDirectory": "/build"
+  },
   "exeBasedExtensionTips": {
     "az": {
       "friendlyName": "Azure CLI",
