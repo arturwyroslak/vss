@@ -1,0 +1,1 @@
+{"name":"theme-anysphere","displayName":"%displayName%","description":"%description%","version":"1.0.0","publisher":"vscode","license":"MIT","engines":{"vscode":"*"},"contributes":{"themes":[{"id":"Anysphere","label":"%themeLabel%","uiTheme":"vs-dark","path":"./themes/anysphere-theme.json"}]}}
