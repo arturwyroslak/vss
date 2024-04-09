@@ -16,6 +16,7 @@ body {
 	user-select: none;
 }
 
+/* The .audio-container class styles the container to fill the available space and center its content, both vertically and horizontally. */
 .audio-container {
 	height: 100%;
 	display: flex;
@@ -23,6 +24,7 @@ body {
 	align-items: center;
 }
 
+/* Styles for the loading and error states, ensuring the indicators are centered. */
 .container.loading,
 .container.error {
 	display: flex;
@@ -30,6 +32,7 @@ body {
 	align-items: center;
 }
 
+/* The loading indicator animation displayed while the audio is loading. */
 .loading-indicator {
 	width: 30px;
 	height: 30px;
