@@ -9,6 +9,8 @@ html {
 	text-align: center;
 }
 
+/* Ensures the video preview occupies the full available height and width of the browser window, and centers content horizontally. */
+
 body {
 	padding: 5px 10px;
 	width: calc(100% - 20px);
@@ -20,12 +22,16 @@ body {
 	user-select: none;
 }
 
+/* Sets the body to a flex container to center the video both vertically and horizontally, with some padding. Prevents text selection for a cleaner UI. */
+
 .loading-indicator {
 	width: 30px;
 	height: 30px;
 	background-image: url('./loading.svg');
 	background-size: cover;
 }
+
+/* Displays a loading indicator animation while the video is being loaded. */
 
 .loading-indicator,
 .loading-error {
