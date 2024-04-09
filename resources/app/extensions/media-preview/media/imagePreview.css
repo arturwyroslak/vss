@@ -38,6 +38,8 @@ body img {
 	border: 1px solid var(--vscode-imagePreview-border);
 }
 
+/* The .container.image img styles apply a checkerboard background to images to enhance visibility of transparent images. It also sets a border around the image. */
+
 .container.image img {
 	background-image:
 		linear-gradient(45deg, rgb(230, 230, 230) 25%, transparent 25%, transparent 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)),
@@ -98,6 +100,8 @@ body img {
 	display: none;
 }
 
+/* Styles for loading and error states, including a loading indicator and error message display. */
+
 .loading .loading-indicator,
 .error .image-load-error {
 	display: block;
@@ -114,3 +118,5 @@ body img {
 .vscode-high-contrast .loading-indicator {
 	background-image: url('./loading-hc.svg');
 }
+
+/* Adjusts the loading indicator for different themes, ensuring visibility across all Visual Studio Code themes. */
