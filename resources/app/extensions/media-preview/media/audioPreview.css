@@ -16,6 +16,7 @@ body {
 	user-select: none;
 }
 
+/* Container for the audio player, ensuring it's centered. */
 .audio-container {
 	height: 100%;
 	display: flex;
@@ -23,6 +24,7 @@ body {
 	align-items: center;
 }
 
+/* Styles for the container during loading and error states. */
 .container.loading,
 .container.error {
 	display: flex;
@@ -30,6 +32,7 @@ body {
 	align-items: center;
 }
 
+/* Loading indicator animation. */
 .loading-indicator {
 	width: 30px;
 	height: 30px;
@@ -42,11 +45,13 @@ body {
 	display: none;
 }
 
+/* Display the loading indicator or error message as appropriate. */
 .loading .loading-indicator,
 .error .loading-error {
 	display: block;
 }
 
+/* Styles for the error message when loading fails. */
 .loading-error {
 	margin: 1em;
 }
