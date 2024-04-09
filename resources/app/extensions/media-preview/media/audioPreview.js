@@ -31,9 +31,12 @@
 	container.className = 'audio-container';
 	document.body.appendChild(container);
 
+	// Create an audio element with a source if provided in settings.
 	const audio = new Audio(settings.src === null ? undefined : settings.src);
+	// Enable playback controls for the audio element.
 	audio.controls = true;
 
+	// Marks the audio as loaded and updates the UI accordingly.
 	function onLoaded() {
 		if (hasLoadedMedia) {
 			return;
@@ -45,6 +48,7 @@
 		container.append(audio);
 	}
 
+	// Event listener for handling audio loading errors.
 	audio.addEventListener('error', e => {
 		if (hasLoadedMedia) {
 			return;
@@ -58,7 +62,8 @@
 	if (settings.src === null) {
 		onLoaded();
 	} else {
-		audio.addEventListener('canplaythrough', () => {
+		// Event listener to ensure the audio is ready for playback.
+	audio.addEventListener('canplaythrough', () => {
 			onLoaded();
 		});
 	}
