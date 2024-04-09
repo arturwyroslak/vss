@@ -20,6 +20,7 @@ body {
 	user-select: none;
 }
 
+/* Displays a loading indicator animation. */
 .loading-indicator {
 	width: 30px;
 	height: 30px;
@@ -32,19 +33,23 @@ body {
 	display: none;
 }
 
+/* Shows the loading indicator or error message when appropriate. */
 .loading .loading-indicator,
 .error .loading-error {
 	display: block;
 }
 
+/* Styles for the error message displayed when loading fails. */
 .loading-error {
 	margin: 1em;
 }
 
+/* Dark theme loading indicator. */
 .vscode-dark .loading-indicator {
 	background-image: url('./loading-dark.svg');
 }
 
+/* High contrast theme loading indicator. */
 .vscode-high-contrast .loading-indicator {
 	background-image: url('./loading-hc.svg');
 }
