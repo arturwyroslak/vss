@@ -31,11 +31,11 @@
 	if (settings.src !== null) {
 		video.src = settings.src;
 	}
-	video.playsInline = true;
-	video.controls = true;
-	video.autoplay = settings.autoplay;
-	video.muted = settings.autoplay;
-	video.loop = settings.loop;
+	video.playsInline = true; // Allows the video to play inline on the webpage without entering fullscreen mode.
+	video.controls = true; // Shows the default video controls.
+	video.autoplay = settings.autoplay; // Autoplays the video based on the settings.
+	video.muted = settings.autoplay; // Mutes the video if autoplay is enabled.
+	video.loop = settings.loop; // Loops the video playback if enabled in the settings.
 
 	function onLoaded() {
 		if (hasLoadedMedia) {
