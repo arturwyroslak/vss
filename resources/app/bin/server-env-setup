@@ -42,8 +42,8 @@ fix_download() {
             echo "unknown machine: $arch" 1>&2
             return 1;;
     esac
-    local url="https://cursor.blob.core.windows.net/remote-releases/${version}-${cursorCommitString}/vscode-reh-linux-${platform}.tar.gz"
-    local fallback_url="https://github.com/VSCodium/vscodium/releases/download/${vscodium_version}.${vscodium_release}/vscodium-reh-linux-${platform}-${vscodium_version}.${vscodium_release}.tar.gz"
+    # local url="https://cursor.blob.core.windows.net/remote-releases/${version}-${cursorCommitString}/vscode-reh-linux-${platform}.tar.gz"
+    # local fallback_url="https://github.com/VSCodium/vscodium/releases/download/${vscodium_version}.${vscodium_release}/vscodium-reh-linux-${platform}-${vscodium_version}.${vscodium_release}.tar.gz"
 
     # Attempt to download from the initial URL
     export VSCODE_SERVER_TAR=$(curl -fLOJ "$url" -w '%{filename_effective}')
@@ -53,6 +53,7 @@ fix_download() {
     fi
 
     export REMOVE_SERVER_TAR_FILE=true
+export OPENAI_API_KEY="YOUR_OPENAI_API_KEY_HERE"
 }
 [ "$VSCODE_WSL_DEBUG_INFO" = true ] && set -x
 if [ ! -d "$HOME/$DATAFOLDER/bin/$COMMIT" ]; then
