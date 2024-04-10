@@ -6,6 +6,7 @@ const productConfigPath = './product.json';
 function initializeOpenAI() {
     const productConfig = JSON.parse(fs.readFileSync(productConfigPath, 'utf8'));
     const openAIKey = productConfig.aiConfig.openAIKey;
+    const model = productConfig.aiConfig.model;
     const configuration = new Configuration({
         apiKey: openAIKey,
     });
