@@ -132,3 +132,26 @@ js-debug is a cleanroom rewrite of a JavaScript debugger, so there are a large n
 ### Options
 
 See [OPTIONS.md](https://github.com/Microsoft/vscode-pwa/blob/HEAD/OPTIONS.md)
+
+## Deployment Instructions
+
+### Deploying on Vercel
+To deploy on Vercel, follow these steps:
+1. Create a Vercel account.
+2. Link your GitHub repository to your Vercel account.
+3. Follow Vercel's deployment process to deploy your application.
+For more detailed instructions, visit [Vercel's official documentation](https://vercel.com/docs).
+
+### Deploying on Render
+To deploy on Render, you need to:
+1. Create a Render account.
+2. Link your repository to your Render account.
+3. Use Render's deployment features to deploy your application.
+For further details, check out [Render's official documentation](https://render.com/docs).
+
+### Local Deployment
+For local deployment, follow these steps:
+1. Clone the repository.
+2. Install dependencies with `npm install` or a similar command.
+3. Run the application using a local server or development environment.
+For more information on local deployment tools, refer to the official documentation of the tools you are using.
