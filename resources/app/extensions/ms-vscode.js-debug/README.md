@@ -139,15 +139,23 @@ See [OPTIONS.md](https://github.com/Microsoft/vscode-pwa/blob/HEAD/OPTIONS.md)
 To deploy on Vercel, follow these steps:
 1. Create a Vercel account.
 2. Link your GitHub repository to your Vercel account.
-3. Follow Vercel's deployment process to deploy your application.
+3. Follow Vercel's deployment process to deploy your application, ensuring you have set up your OpenAI API key and model selection in `product.json` as per the instructions in the `Setting up OpenAI API Key and Model Selection` section below.
 For more detailed instructions, visit [Vercel's official documentation](https://vercel.com/docs).
 
 ### Deploying on Render
 To deploy on Render, you need to:
 1. Create a Render account.
 2. Link your repository to your Render account.
-3. Use Render's deployment features to deploy your application.
+3. Use Render's deployment features to deploy your application, making sure your OpenAI API key and model selection are correctly configured in `product.json`.
 For further details, check out [Render's official documentation](https://render.com/docs).
+
+### Setting up OpenAI API Key and Model Selection
+Before deploying your application, you need to configure your OpenAI API key and model selection in the `product.json` file. Here are the steps:
+1. Locate the `aiConfig` section in your `product.json` file.
+2. Replace `YOUR_OPENAI_API_KEY_HERE` with your actual OpenAI API key.
+3. For the model selection, you can choose any model supported by OpenAI and replace the default `text-davinci-003` with your desired model.
+
+This configuration is crucial for the application's functionality, so ensure it's set up correctly before proceeding with the deployment.
 
 ### Local Deployment
 For local deployment, follow these steps:
